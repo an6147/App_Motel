@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns = "http://www.w3.org/xhtml"
+      xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
+    
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>LOGIN</div>
+        <form name = "f" th:action = "@{/login?spring-security-redirect=/index}" method = "POST" >
+            <table>
+                <tr> 
+                    <td>Usuario:</td>
+                    <td> <input type = "text" name = "username" id = "username"> </td>
+                </tr>
+                <tr>
+                    <td>Contraseña:</td>
+                    <td> <input type = "password" name = "password" id = "password"> </td>
+                </tr>
+                <tr>
+                    <td> <input name = "submit" type = "submit" value = "Login"> </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

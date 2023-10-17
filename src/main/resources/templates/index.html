@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns = "http://www.w3.org/xhtml"
+      xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <a th:href = "@{/manager}"> Modulo Manager </a> |
+        <a th:href = "@{/rooms}"> Modulo mantenimiento </a> |
+        <a th:href = "@{/reception}">Modulo de recepcion</a>
+        <br>
+        Logged user: <span sec:authentication="name">Usuario</span>
+        <br>
+        Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+    </body>
+</html>
