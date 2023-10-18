@@ -33,7 +33,7 @@ import lombok.NoArgsConstructor;
 @Entity /*Notación para definir el contexto en JPA de Spring Boot*/
 
 @Data /*Notación para  definir el contexto en lombok, y así no codear los getters and setters*/
-@AllArgsConstructor /*Para generar el contsructor con todos los parametros*/
+@AllArgsConstructor /*Para generar el constructor con todos los parametros*/
 @NoArgsConstructor /*Para generar el constructor vacio*/
 @Builder /*Para que lombok utilice este patron de diseño para construir objetos de esta clase*/
         

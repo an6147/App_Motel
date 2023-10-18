@@ -14,10 +14,10 @@ import org.springframework.security.web.SecurityFilterChain;
  *
  * Configuración de seguridad
  */
-@Configuration
-/*notacion para definifir el contexto de la clase*/
-@EnableWebSecurity
-/*notacion para definir que estamos personalizando la config de seguridad*/
+
+@Configuration /*notacion para definifir el contexto de la clase*/
+
+@EnableWebSecurity /*notacion para definir que estamos personalizando la config de seguridad*/
 
 public class SecurityConfiguration {
     
@@ -25,7 +25,7 @@ public class SecurityConfiguration {
     public InMemoryUserDetailsManager userDetailsService() {/*autenticacion en memoria*/
         UserBuilder users = User.withDefaultPasswordEncoder();/*Objeto de tipo ensamblador de usuario*/
 
- /*Usuarios en memoria, para pruebas*/
+        /*Usuarios en memoria, para pruebas*/
         UserDetails manager = users /*manager con las caracteristicas de users*/
                 .username("manager")
                 .password("123")
@@ -38,7 +38,7 @@ public class SecurityConfiguration {
                 .roles("RECEPTIONIST")
                 .build();
         
-        UserDetails cleanliness = users /*receptionist con las caracteristicas de users*/
+        UserDetails cleanliness = users /*cleanliness con las caracteristicas de users*/
                 .username("clean")
                 .password("123")
                 .roles("CLEANLINESS")
@@ -47,7 +47,7 @@ public class SecurityConfiguration {
         return new InMemoryUserDetailsManager(manager, receptionist, cleanliness);
     }
     
-    @Bean
+    @Bean /*Bean de autorización*/
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authz -> authz
