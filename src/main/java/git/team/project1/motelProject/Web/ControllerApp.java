@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * Definición de URL´s
  */
-@Controller/*Notacion para definir el contexto de la clase*/
-@Slf4j
-/*notacion de lombok para enviar cosas a consola*/
-public class ControllerApp {
 
+@Controller /*Notacion para definir el contexto de la clase*/
+@Slf4j /*notacion de lombok para enviar mensajes a consola*/
+
+public class ControllerApp {
 
     @GetMapping("/manager")
     public String manager(Model model) {
@@ -32,8 +32,13 @@ public class ControllerApp {
     }
 
     @GetMapping("/login")
-    public String login (Model model) {
+    public String login(Model model) {
         return "login";
+    }
+
+    @GetMapping("/403")
+    public String m403 (Model model) {
+        return "403";
     }
 
 }
