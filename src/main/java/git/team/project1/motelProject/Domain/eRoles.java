@@ -26,18 +26,15 @@ import lombok.NoArgsConstructor;
 @Data /*Notación para  definir el contexto en lombok, y así no codear los getters and setters*/
 @AllArgsConstructor /*Para generar el constructor con todos los parametros*/
 @NoArgsConstructor /*Para generar el constructor vacio*/
-@Builder /*Para que lombok utilice este patron de diseño para construir objetos de esta clase*/
 
 @Table (name = "roles")
 public class eRoles{
     
-    
     @Id /*Notación para indicar la llave primaria*/
     @GeneratedValue (strategy = GenerationType.IDENTITY)/*Definir el tipo de generación del valor de "pKey"*/
-    @Column (name = "id") /*Nombre literal de la columna en la db*/
-    private Long id;
+    @Column (name = "r_id") /*Nombre literal de la columna en la db*/
+    private Long r_id;
     
-    @Enumerated (EnumType.STRING) /*por ser enumeracion*/
     @Column (name = "name_Role")
-    private EnumRoles name_Role; /* "EnumRoles" es una enumeracion donde se guardarán todos nuestros roles*/ 
+    private String name_Role; /* "EnumRoles" es una enumeracion donde se guardarán todos nuestros roles*/ 
 }
