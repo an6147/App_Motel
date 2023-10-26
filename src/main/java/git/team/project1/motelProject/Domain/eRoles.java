@@ -37,4 +37,10 @@ public class eRoles{
     
     @Column (name = "name_Role")
     private String name_Role; /* "EnumRoles" es una enumeracion donde se guardarán todos nuestros roles*/ 
+
+    public eRoles(String name_Role) {
+        this.name_Role = name_Role;
+    }
+    
+    
 }
